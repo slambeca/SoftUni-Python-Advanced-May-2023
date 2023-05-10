@@ -24,5 +24,3 @@ while pumps_data_copy:
         liters_in_tank -= distance
 
 print(index)
-
-# 100/100 in Judge
