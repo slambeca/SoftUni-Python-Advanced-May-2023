@@ -26,28 +26,24 @@ if not stack and not closings:
 else:
     print("NO")
 
-# 100/100 in Judge
-
 # Variant 2
-from collections import deque
+# from collections import deque
 
-parentheses = deque(input())  # deque(['{', '[', '(', ')', ']', '}'])
+# parentheses = deque(input())  # deque(['{', '[', '(', ')', ']', '}'])
 
-opened_parentheses = deque()
+# opened_parentheses = deque()
 
-while parentheses:
-    left_parenthesis = parentheses.popleft()
+# while parentheses:
+#     left_parenthesis = parentheses.popleft()
 
-    if left_parenthesis in "{([":
-        opened_parentheses.append(left_parenthesis)
-    elif not opened_parentheses:
-        print("NO")
-        break
-    else:
-        if f"{opened_parentheses.pop() + left_parenthesis}" not in "{}()[]":
-            print("NO")
-            break
-else:
-    print("YES")
-
-# 100/100 in Judge
+#     if left_parenthesis in "{([":
+#         opened_parentheses.append(left_parenthesis)
+#     elif not opened_parentheses:
+#         print("NO")
+#         break
+#     else:
+#         if f"{opened_parentheses.pop() + left_parenthesis}" not in "{}()[]":
+#             print("NO")
+#             break
+# else:
+#     print("YES")
