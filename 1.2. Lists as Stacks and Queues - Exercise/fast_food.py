@@ -21,5 +21,3 @@ else:
     print(f"Orders left: ", end="")
     for number in orders_as_deque:    # ' '.join[str(o) for o in orders_as_deque]
         print(number, end=" ")
-
-# 100/100 in Judge
