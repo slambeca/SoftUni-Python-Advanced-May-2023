@@ -35,8 +35,6 @@ while products:
 
     print(f"{free_robots[0][0]} - {product} [{factory_time.strftime('%H:%M:%S')}]")
 
-# 100/100 in Judge
-
 # Variant 2
 from collections import deque
 from datetime import datetime, timedelta
@@ -83,5 +81,3 @@ while products:
     robots[robot_name][1] = data[0]
 
     print(f"{free_robots[0][0]} - {product} [{factory_time.strftime('%H:%M:%S')}]")
-
-# 100/100 in Judge
