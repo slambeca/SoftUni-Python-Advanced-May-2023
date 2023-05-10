@@ -1,4 +1,3 @@
-# Using a stack
 numbers = [int(x) for x in input().split()]    # [1, 2, 3, 4, 5]
 
 reversed_numbers = []
@@ -10,9 +9,7 @@ while len(numbers):
 
 print(*reversed_numbers, sep=" ")
 
-# 100/100 in Judge
-
-# Using a deque
+# Variant 2
 from collections import deque
 
 text = deque(input().split())
@@ -21,9 +18,13 @@ text.reverse()
 
 print(" ".join(text))
 
-# 100/100 in Judge
-
-# One-liner
+# Variant 3
 print(*input().split()[::-1], sep=" ")
 
-# 100/100 in Judge
+# Variant 4
+from collections import deque
+
+numbers = deque(input().split())
+
+for _ in range(len(numbers)):
+    print(numbers.pop(), end=" ")
