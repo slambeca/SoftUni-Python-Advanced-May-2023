@@ -33,5 +33,3 @@ while info != COMMAND_END:
     info = input()
 
 print(f"Everyone is safe.\n{total_cars} total cars passed the crossroads.")
-
-# 100/100 in Judge
