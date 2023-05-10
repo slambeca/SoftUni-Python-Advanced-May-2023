@@ -26,24 +26,20 @@ if current_sum:
 
 print(used_racks)
 
-# 100/100 in Judge
-
 # Variant 2
-clothes = [int(x) for x in input().split()]
-rack_space = int(input())
+# clothes = [int(x) for x in input().split()]
+# rack_space = int(input())
 
-racks_count = 1
-current_rack_space = rack_space
+# racks_count = 1
+# current_rack_space = rack_space
 
-while clothes:
-    item_value = clothes.pop()
+# while clothes:
+#     item_value = clothes.pop()
 
-    if current_rack_space - item_value >= 0:
-        current_rack_space -= item_value
-    else:
-        racks_count += 1
-        current_rack_space = rack_space - item_value
+#     if current_rack_space - item_value >= 0:
+#         current_rack_space -= item_value
+#     else:
+#         racks_count += 1
+#         current_rack_space = rack_space - item_value
 
-print(racks_count)
-
-# 100/100 in Judge
+# print(racks_count)
