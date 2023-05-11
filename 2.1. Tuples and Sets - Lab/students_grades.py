@@ -36,3 +36,20 @@ for key, values in students.items():
 #     convert_grades_to_string = ' '.join(map(lambda grade: f"{grade:.2f}", grades))
 #     average_grade = sum(grades) / len(grades)
 #     print(f"{student} -> {convert_grades_to_string} (avg: {average_grade:.2f})")
+
+# Variant 3
+# n = int(input())
+#
+# student_grades = {}
+#
+# for _ in range(n):
+#     name, grade = tuple(input().split())
+#     grade = float(grade)
+#
+#     if name not in student_grades.keys():
+#         student_grades[name] = []
+#     student_grades[name].append(grade)
+#
+# for student, grades in student_grades.items():
+#     avg = sum(grades) / len(grades)
+#     print(f"{student} -> {' '.join([str(f'{x:.2f}') for x in grades])} (avg: {avg:.2f})")
