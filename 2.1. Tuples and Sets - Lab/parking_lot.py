@@ -23,7 +23,7 @@ if registrations:
 else:
     print("Parking Lot is Empty")
 
-# # Variant 2
+# Variant 2
 #
 #
 # def print_func(data):
@@ -51,3 +51,19 @@ else:
 #         parking_lot_data.remove(registration)
 #
 # print_func(parking_lot_data)
+
+# Variant 3
+# n = int(input())
+# cars = set()
+
+# for _ in range(n):
+#     direction, number = input().split(", ")
+#     if direction == "IN":
+#         cars.add(number)
+#     elif direction == "OUT":
+#         cars.remove(number)
+
+# if cars:
+#     print(*cars, sep="\n")
+# else:
+#     print("Parking Lot is Empty")
