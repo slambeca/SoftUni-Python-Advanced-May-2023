@@ -1,4 +1,3 @@
-# The print sequence does not matter
 count_names = int(input())
 
 names = []
@@ -22,11 +21,13 @@ print("\n".join(set(names)))
 #
 # print("\n".join(names))
 #
-# # Variant 3
-#
+# Variant 3
 # n = int(input())
 #
 # names_data = {input() for _ in range(n)}
 #
 # for name in names_data:
 #     print(name)
+
+# Variant 4
+# print(*{input() for _ in range(int(input()))}, sep="\n")
