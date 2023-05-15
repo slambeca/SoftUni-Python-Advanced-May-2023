@@ -45,3 +45,24 @@ elif sum(odd_set) < sum(even_set):
 #     print(*odd_set.difference(even_set), sep=", ")
 # else:
 #     print(*odd_set.symmetric_difference(even_set), sep=", ")
+
+# Variant 3
+# odd_set = set()
+# even_set = set()
+# 
+# for index in range(1, int(input()) + 1):
+#     current_name = input()
+# 
+#     result = int(sum(ord(letter) for letter in current_name) / index)
+# 
+#     if result % 2 != 0:
+#         odd_set.add(int(result))
+#     else:
+#         even_set.add(int(result))
+# 
+# if sum(odd_set) == sum(even_set):
+#     print(', '.join(str(x) for x in odd_set.union(even_set)))
+# elif sum(odd_set) > sum(even_set):
+#     print(', '.join(str(x) for x in odd_set.difference(even_set)))
+# else:
+#     print(', '.join(str(x) for x in odd_set.symmetric_difference(even_set)))
