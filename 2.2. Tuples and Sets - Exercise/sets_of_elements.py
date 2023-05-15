@@ -28,3 +28,11 @@ print(*set_one.intersection(set_two), sep="\n")
 # second_set = {int(input()) for _ in range(m)}
 #
 # print(*first_set.intersection(second_set), sep="\n")
+
+# Variant 4
+# n, m = [int(x) for x in input().split()]
+
+# first_set = {int(input()) for _ in range(n)}
+# second_set = {int(input()) for _ in range(m)}
+
+# print(*(first_set & second_set), sep="\n")
