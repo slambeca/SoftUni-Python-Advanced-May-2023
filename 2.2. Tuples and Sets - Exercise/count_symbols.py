@@ -21,7 +21,7 @@ for key, value in sorted(dictionary.items()):
 # for letter, times in sorted(occurrences.items()):
 #     print(f"{letter}: {times} time/s")
 #
-# # Variant 3
+# Variant 3
 # occurrences = {}
 #
 # for letter in input():
@@ -31,9 +31,15 @@ for key, value in sorted(dictionary.items()):
 #     print(f"{letter}: {times} time/s")
 #
 #
-# # Variant 4
+# Variant 4
 # input_line = list(input())
 # symbols = {symbol: input_line.count(symbol) for symbol in input_line}
 #
 # for key, value in sorted(symbols.items()):
 #     print(f"{key}: {value} time/s")
+
+# Variant 5
+# text = input()
+# 
+# for letter in sorted(set(text)):
+#     print(f"{letter}: {text.count(letter)} time/s")
