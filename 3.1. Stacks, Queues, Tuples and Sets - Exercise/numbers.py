@@ -77,13 +77,13 @@ print(*sorted(second_set), sep=", ")
 # Variant 4, similar to Variant 1
 # first_set = set(int(x) for x in input().split())
 # second_set = set(int(x) for x in input().split())
-# 
+#
 # for _ in range(int(input())):
 #     first_command, second_command, *data = input().split()
 #     # For the check command data will be an empty list []
-# 
+#
 #     command = first_command + " " + second_command
-# 
+#
 #     if command == "Add First":
 #         [first_set.add(int(element)) for element in data]
 #         # for element in data:
@@ -96,6 +96,6 @@ print(*sorted(second_set), sep=", ")
 #         [second_set.discard(int(element)) for element in data]
 #     else:
 #         print(first_set.issubset(second_set) or second_set.issubset(first_set))
-# 
+#
 # print(*sorted(first_set), sep=", ")
 # print(*sorted(second_set), sep=", ")
