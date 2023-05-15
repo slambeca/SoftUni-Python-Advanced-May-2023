@@ -3,15 +3,15 @@ current_row = 1
 odd_set = set()
 even_set = set()
 
-for _ in range(int(input())):    # 4
-    name = input()    # Pesho
+for _ in range(int(input())):    
+    name = input()    
 
-    total_ascii_score = 0    # 511
+    total_ascii_score = 0   
 
     for letter in name:
         total_ascii_score += ord(letter)
 
-    divided_sum = int(total_ascii_score / current_row)    # 511
+    divided_sum = int(total_ascii_score / current_row)   
 
     if divided_sum % 2 == 0:
         even_set.add(divided_sum)
@@ -54,15 +54,9 @@ elif sum(odd_set) < sum(even_set):
 #     current_name = input()
 # 
 #     result = int(sum(ord(letter) for letter in current_name) / index)
+#     odd_set.add(int(result)) if result % 2 != 0 else even_set.add(int(result))
 # 
-#     if result % 2 != 0:
-#         odd_set.add(int(result))
-#     else:
-#         even_set.add(int(result))
-# 
-# if sum(odd_set) == sum(even_set):
-#     print(', '.join(str(x) for x in odd_set.union(even_set)))
-# elif sum(odd_set) > sum(even_set):
+# if sum(odd_set) > sum(even_set):
 #     print(', '.join(str(x) for x in odd_set.difference(even_set)))
 # else:
 #     print(', '.join(str(x) for x in odd_set.symmetric_difference(even_set)))
