@@ -27,3 +27,18 @@ def get_sum_columns():
 result = get_sum_columns()
 
 print(*result, sep="\n")
+
+# Variant 2
+# rows, cols = [int(x) for x in input().split(", ")]
+#
+# matrix = []
+#
+# for _ in range(rows):
+#     inner_list = [int(x) for x in input().split()]
+#     matrix.append(inner_list)
+#
+# for col_index in range(cols):
+#     sum_elements = 0
+#     for row_index in range(rows):
+#         sum_elements += matrix[row_index][col_index]
+#     print(sum_elements)
