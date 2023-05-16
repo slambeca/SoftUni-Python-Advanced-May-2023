@@ -62,20 +62,18 @@ print(matrix)
 
 # Variant 4
 # rows, cols = [int(x) for x in input().split(", ")]
-#
+# 
 # matrix = []
-#
+# 
 # total_sum = 0
-#
+# 
 # for _ in range(rows):
-#     inner_list = []
-#     numbers = [int(x) for x in input().split(", ")]
-#     for num in numbers:
-#         inner_list.append(num)
+#     inner_list = [int(x) for x in input().split(", ")]
 #     matrix.append(inner_list)
-#
-# for row in matrix:
-#     total_sum += sum(row)
-#
+# 
+# for row_index in range(rows):
+#     for col_index in range(cols):
+#         total_sum += matrix[row_index][col_index]
+# 
 # print(total_sum)
 # print(matrix)
