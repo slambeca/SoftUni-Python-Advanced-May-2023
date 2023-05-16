@@ -51,14 +51,14 @@ print(floor(int(expression[0])))
 # Variant 3
 # from collections import deque
 # from math import floor
-# 
+#
 # expression = deque(input().split())
-# 
+#
 # idx = 0
-# 
+#
 # while idx < len(expression):
 #     element = expression[idx]
-# 
+#
 #     if element == "*":
 #         for _ in range(idx - 1):
 #             expression.appendleft(int(expression.popleft()) * int(expression.popleft()))
@@ -71,11 +71,41 @@ print(floor(int(expression[0])))
 #     elif element == "-":
 #         for _ in range(idx - 1):
 #             expression.appendleft(int(expression.popleft()) - int(expression.popleft()))
-# 
+#
 #     if element in "*/+-":
 #         del expression[1]
 #         idx = 1
-# 
+#
 #     idx += 1
-# 
+#
 # print(floor(int(expression[0])))
+
+# Variant 4
+# from collections import deque
+# from functools import reduce
+# from math import floor
+#
+# data = deque(input().split())
+# new_data = data.copy()
+#
+# digits = []
+#
+# while data:
+#     for char in new_data:
+#         if char.lstrip("-").isdigit():
+#             current_num = data.popleft()
+#             digits.append(int(current_num))
+#
+#         else:
+#             if char == "-":
+#                 digits = [reduce(lambda x, y: x - y, digits)]
+#             elif char == "+":
+#                 digits = [reduce(lambda x, y: x + y, digits)]
+#             elif char == "*":
+#                 digits = [reduce(lambda x, y: x * y, digits)]
+#             else:
+#                 digits = [floor(reduce(lambda x, y: x / y, digits))]
+#
+#             data.popleft()
+#
+# print(*digits)
