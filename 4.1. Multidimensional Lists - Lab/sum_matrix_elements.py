@@ -15,7 +15,7 @@ total_sum = sum([sum(x) for x in matrix])
 print(total_sum)
 print(matrix)
 
-# # Variant 2
+# Variant 2
 #
 #
 # def read_matrix_func():
@@ -40,7 +40,7 @@ print(matrix)
 # print(matrix_elements_sum)
 # print(matrix)
 #
-# # Variant 3
+# Variant 3
 # data = list(int(x) for x in input().split(", "))
 #
 # rows = int(data[0])
@@ -56,6 +56,26 @@ print(matrix)
 #     matrix.append(numbers)
 #
 #     total_sum += sum(numbers)
+#
+# print(total_sum)
+# print(matrix)
+
+# Variant 4
+# rows, cols = [int(x) for x in input().split(", ")]
+#
+# matrix = []
+#
+# total_sum = 0
+#
+# for _ in range(rows):
+#     inner_list = []
+#     numbers = [int(x) for x in input().split(", ")]
+#     for num in numbers:
+#         inner_list.append(num)
+#     matrix.append(inner_list)
+#
+# for row in matrix:
+#     total_sum += sum(row)
 #
 # print(total_sum)
 # print(matrix)
