@@ -83,19 +83,18 @@ print(floor(int(expression[0])))
 # Variant 4
 # from collections import deque
 # from functools import reduce
-# from math import floor
-#
+
 # data = deque(input().split())
 # new_data = data.copy()
-#
+
 # digits = []
-#
+
 # while data:
 #     for char in new_data:
 #         if char.lstrip("-").isdigit():
 #             current_num = data.popleft()
 #             digits.append(int(current_num))
-#
+
 #         else:
 #             if char == "-":
 #                 digits = [reduce(lambda x, y: x - y, digits)]
@@ -104,8 +103,8 @@ print(floor(int(expression[0])))
 #             elif char == "*":
 #                 digits = [reduce(lambda x, y: x * y, digits)]
 #             else:
-#                 digits = [floor(reduce(lambda x, y: x / y, digits))]
-#
+#                 digits = [reduce(lambda x, y: x // y, digits)]
+
 #             data.popleft()
-#
+
 # print(*digits)
