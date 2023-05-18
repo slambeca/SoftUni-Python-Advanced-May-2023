@@ -1,13 +1,13 @@
 matrix = []
 
 for _ in range(int(input())):
-    current_row = [int(x) for x in input().split(", ") if x % 2 == 0]
+    current_row = [int(x) for x in input().split(", ") if int(x) % 2 == 0]
 
     matrix.append(current_row)
 
 print(matrix)
 
-# # Variant 2
+# Variant 2
 # matrix = []
 #
 # for i in range(int(input())):
@@ -17,3 +17,6 @@ print(matrix)
 # evens = [[x for x in row if x % 2 == 0] for row in matrix]
 #
 # print(evens)
+
+# Variant 3
+# print([[int(x) for x in input().split(", ") if int(x) % 2 == 0] for _ in range(int(input()))])
