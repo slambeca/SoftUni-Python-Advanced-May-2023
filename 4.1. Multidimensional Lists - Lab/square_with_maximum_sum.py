@@ -33,25 +33,22 @@ print(f"{biggest_first_first} {biggest_first_second}\n{biggest_second_first} {bi
 
 # Variant 2
 # rows, cols = [int(x) for x in input().split(", ")]
-# 
+
 # matrix = []
-# 
+
 # biggest_sum = 0
-# biggest_first_first = 0
-# biggest_first_second = 0
-# biggest_second_first = 0
-# biggest_second_second = 0
-# 
+# biggest_first_first, biggest_first_second, biggest_second_first, biggest_second_second = [0, 0, 0, 0]
+
 # for _ in range(rows):
 #     numbers = [int(x) for x in input().split(", ")]
 #     matrix.append(numbers)
-# 
+
 # for i in range(rows - 1):
 #     for j in range(cols - 1):
 #         if matrix[i][j] + matrix[i][j + 1] + matrix[i + 1][j] + matrix[i + 1][j + 1] > biggest_sum:
 #             biggest_sum = matrix[i][j] + matrix[i][j + 1] + matrix[i + 1][j] + matrix[i + 1][j + 1]
-# 
+
 #             biggest_first_first, biggest_first_second, biggest_second_first, biggest_second_second = \
 #                 matrix[i][j], matrix[i][j + 1], matrix[i + 1][j], matrix[i + 1][j + 1]
-# 
+
 # print(f"{biggest_first_first} {biggest_first_second}\n{biggest_second_first} {biggest_second_second}\n{biggest_sum}")
