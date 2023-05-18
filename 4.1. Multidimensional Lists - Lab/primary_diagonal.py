@@ -50,3 +50,8 @@ print(*set(get_sum_primary_diagonal()))
 #
 #
 # print(get_sum_primary_diagonal(matrix))
+
+# Variant 3
+# matrix = [[int(x) for x in input().split()] for _ in range(int(input()))]
+# 
+# print(sum([matrix[i][i] for i in range(len(matrix))]))
