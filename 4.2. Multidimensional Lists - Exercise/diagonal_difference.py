@@ -66,3 +66,8 @@ print(difference)
 #     secondary += matrix[n - i - 1][i]
 #
 # print(abs(primary - secondary))
+
+# Variant 4
+# mtrx = [[int(x) for x in input().split()] for _ in range(int(input()))]
+# 
+# print(abs(sum([mtrx[i][i] for i in range(len(mtrx))]) - sum(mtrx[i][len(mtrx) - i - 1] for i in range(len(mtrx)))))
