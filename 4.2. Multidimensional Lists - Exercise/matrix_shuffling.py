@@ -32,19 +32,19 @@ while True:
 
 # Variant 2
 # rows, cols = [int(x) for x in input().split()]
-#
+# 
 # matrix = [input().split() for _ in range(rows)]
-#
+# 
 # COMMAND_END = "END"
-#
+# 
 # valid_rows = list(range(rows))
 # valid_cols = list(range(cols))
-#
+# 
 # while True:
 #     command, *info = [int(x) if x.isdigit() else x for x in input().split()]
-#
+# 
 #     if len(info) == 4 and command == "swap":
-#         row_one, col_one, row_two, col_two = int(info[0]), int(info[1]), int(info[2]), int(info[3])
+#         row_one, col_one, row_two, col_two = info
 #         if {row_one, row_two}.issubset(valid_rows) and {col_one, col_two}.issubset(valid_cols):
 #             matrix[row_one][col_one], matrix[row_two][col_two] = matrix[row_two][col_two], matrix[row_one][col_one]
 #             [print(*row) for row in matrix]
