@@ -57,3 +57,12 @@ print(f"Secondary diagonal: {', '.join(str(x) for x in secondary_diagonal_number
 #
 # print(f"Primary diagonal: {', '.join(str(x) for x in primary_diagonal)}. Sum: {sum(primary_diagonal)}")
 # print(f"Secondary diagonal: {', '.join([str(x) for x in secondary_diagonal][::-1])}. Sum: {sum(secondary_diagonal)}")
+
+# Variant 3
+# matrix = [[int(x) for x in input().split(", ")] for _ in range(int(input()))]
+#
+# primary_diagonal = [matrix[i][i] for i in range(len(matrix))]
+# secondary_diagonal = [matrix[i][len(matrix) - i - 1] for i in range(len(matrix) - 1, -1, -1)]
+#
+# print(f"Primary diagonal: {', '.join(str(x) for x in primary_diagonal)}. Sum: {sum(primary_diagonal)}\n"
+#       f"Secondary diagonal: {', '.join(str(x) for x in secondary_diagonal[::-1])}. Sum: {sum(secondary_diagonal)}")
