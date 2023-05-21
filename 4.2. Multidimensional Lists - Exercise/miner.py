@@ -44,3 +44,68 @@ for command in commands:
     matrix[r][c] = "*"
 else:
     print(f"{total_coal - collected_coal} pieces of coal left. ({miner_position[0]}, {miner_position[1]})")
+    
+# Variant 2
+
+
+# def check_indices(row, col):
+#     if 0 <= row < rows and 0 <= col < rows:
+#         return True
+# 
+#     return False
+# 
+# 
+# rows = int(input())    # 5
+# 
+# commands = [x for x in input().split()]    # ['up', 'right', 'right', 'up', 'right']
+# 
+# matrix = []
+# miner_position = []
+# 
+# collected_coal = 0
+# total_coal = 0    # 4
+# 
+# # * * * c *
+# # * * * e *
+# # * * c * *
+# # s * * c *
+# # * * c * *
+# 
+# directions = {
+#     "left": (0, -1),
+#     "right": (0, 1),
+#     "up": (-1, 0),
+#     "down": (1, 0),
+# }
+# 
+# for row in range(rows):
+#     current_row = input().split()
+#     matrix.append(current_row)
+# 
+#     if "s" in matrix[row]:
+#         miner_position = [row, matrix[row].index("s")]    # [3, 0]
+#         matrix[row][miner_position[1]] = "*"    # We replace the "s" with "*"
+# 
+#     total_coal += matrix[row].count("c")
+# 
+# for command in commands:    # up
+#     wanted_row, wanted_col = miner_position[0] + directions[command][0], miner_position[1] + directions[command][1]
+#     # we are not yet moving the miner, we first have to check if the indexes are valid
+# 
+#     if check_indices(wanted_row, wanted_col):
+#         miner_position = wanted_row, wanted_col
+# 
+#         if matrix[wanted_row][wanted_col] == "c":
+#             collected_coal += 1
+#             matrix[wanted_row][wanted_col] = "*"
+# 
+#             if collected_coal == total_coal:
+#                 print(f"You collected all coal! ({wanted_row}, {wanted_col})")
+#                 raise SystemExit
+#         elif matrix[wanted_row][wanted_col] == "e":
+#             print(f"Game over! ({wanted_row}, {wanted_col})")
+#             raise SystemExit
+#     else:
+#         continue
+# else:
+#     print(f"{total_coal - collected_coal} pieces of coal left. ({miner_position[0]}, {miner_position[1]})")
