@@ -63,11 +63,59 @@ for element in matrix:
     print(*element)
 
 # Variant 2
-# n = int(input())
-#
-# matrix = [[int(x) for x in input().split()] for _ in range(int(n))]
-# coordinates = ((int(x) for x in coordinate.split(",")) for coordinate in input().split())    # Tuple comprehension
-#
+n = int(input())
+
+matrix = [[int(x) for x in input().split()] for _ in range(int(n))]
+coordinates = ((int(x) for x in coordinate.split(",")) for coordinate in input().split())    # Tuple comprehension
+
+directions = (
+    (-1, 0),    # Up
+    (1, 0),     # Down
+    (0, 1),     # Right
+    (0, -1),    # Left
+    (-1, 1),    # Top right
+    (-1, -1),   # Top left
+    (1, -1),    # Bottom left
+    (1, 1),     # Bottom right
+    (0, 0),     # Current (this should be last)
+)
+
+for row, col in coordinates:
+    if matrix[row][col] <= 0:
+        continue
+
+    for x, y in directions:
+        r, c = row + x, col + y
+
+        if 0 <= r < n and 0 <= c < n:
+            matrix[r][c] -= matrix[row][col] if matrix[r][c] > 0 else 0
+
+alive_cells = [num for row in range(n) for num in matrix[row] if num > 0]
+
+print(f"Alive cells: {len(alive_cells)}")
+print(f"Sum: {sum(alive_cells)}")
+[print(*matrix[r], sep=" ") for r in range(n)]
+
+# Variant 3
+
+
+# def check_indices(r, c, some_matrix):
+#     if 0 <= r < len(some_matrix) and 0 <= c < len(some_matrix):
+#         return True
+# 
+#     return False
+# 
+# 
+# matrix = [[int(x) for x in input().split()] for _ in range(int(input()))]
+# 
+# # 8 3 2 5
+# # 6 4 7 9
+# # 9 9 3 6
+# # 6 8 1 2
+# 
+# active_cells = 0    # with values bigger than zero
+# total_sum = 0
+# 
 # directions = (
 #     (-1, 0),    # Up
 #     (1, 0),     # Down
@@ -79,19 +127,27 @@ for element in matrix:
 #     (1, 1),     # Bottom right
 #     (0, 0),     # Current (this should be last)
 # )
-#
+# 
+# coordinates = ((int(x) for x in coordinate.split(",")) for coordinate in input().split())    # [[1, 2], [2, 1], [2, 0]]
+# 
 # for row, col in coordinates:
 #     if matrix[row][col] <= 0:
 #         continue
-#
+# 
+#     current_element = matrix[row][col]
+# 
 #     for x, y in directions:
 #         r, c = row + x, col + y
-#
-#         if 0 <= r < n and 0 <= c < n:
-#             matrix[r][c] -= matrix[row][col] if matrix[r][c] > 0 else 0
-#
-# alive_cells = [num for row in range(n) for num in matrix[row] if num > 0]
-#
-# print(f"Alive cells: {len(alive_cells)}")
-# print(f"Sum: {sum(alive_cells)}")
-# [print(*matrix[r], sep=" ") for r in range(n)]
+# 
+#         if check_indices(r, c, matrix):
+#             matrix[r][c] -= current_element if matrix[r][c] > 0 else 0
+# 
+# for row in range(len(matrix)):
+#     for col in range(len(matrix)):
+#         if matrix[row][col] > 0:
+#             active_cells += 1
+#             total_sum += matrix[row][col]
+# 
+# print(f"Alive cells: {active_cells}")
+# print(f"Sum: {total_sum}")
+# [print(*row) for row in matrix]
