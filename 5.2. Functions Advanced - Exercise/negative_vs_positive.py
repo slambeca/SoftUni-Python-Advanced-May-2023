@@ -74,3 +74,25 @@ print(compare_sums(total_negative_sum, total_positive_sum))
 # positive_numbers = sum_positive()
 #
 # print_result(positive_numbers, negative_numbers)
+
+# Variant 3
+
+
+# def negative_or_positive(args):
+#     sum_negatives = 0
+#     sum_positives = 0
+# 
+#     for num in args:
+#         if num < 0:
+#             sum_negatives += num
+#         else:
+#             sum_positives += num
+# 
+#     if abs(sum_negatives) > sum_positives:
+#         return f"{sum_negatives}\n{sum_positives}\nThe negatives are stronger than the positives"
+#     else:
+#         return f"{sum_negatives}\n{sum_positives}\nThe positives are stronger than the negatives"
+# 
+# 
+# numbers = [int(x) for x in input().split()]
+# print(negative_or_positive(numbers))
