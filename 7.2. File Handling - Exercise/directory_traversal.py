@@ -24,7 +24,11 @@ for file_name in os.listdir(current_directory):    # Can be either folder or a f
 
 sorted_dict = dict(sorted(dictionary_with_extensions.items(), key=lambda x: [x[0]]))
 
+result = []
+
 for keys, values in sorted_dict.items():
-    print(f".{keys}")
-    for value in values:
-        print(f"- - - {value}")
+    result.append(f".{keys}")
+    result.append('\n'.join([f"- - - {value}" for value in values]))
+
+with open("report.txt", "w") as report_file:
+    report_file.write('\n'.join(result))
