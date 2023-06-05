@@ -1,4 +1,4 @@
-# Not finished -> 90/100 in Judge
+# Not finished -> 90/100 in Judge TODO
 ROWS, COLUMNS = 8, 8
 
 chess_board = []
