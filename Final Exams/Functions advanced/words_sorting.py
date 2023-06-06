@@ -1,5 +1,5 @@
 def words_sorting(*args):
-    global dictionary
+    dictionary = {}
 
     for word in args:
         if word not in dictionary.keys():
@@ -15,18 +15,18 @@ def words_sorting(*args):
     if values_sum % 2 == 0:
         result = ""
         dictionary = dict(sorted(dictionary.items(), key=lambda x: x[0]))
+
         for key, value in dictionary.items():
             result += f"{key} - {value}\n"
-        return result
+
     else:
         result = ""
         dictionary = dict(sorted(dictionary.items(), key=lambda x: -x[1]))
+
         for key, value in dictionary.items():
             result += f"{key} - {value}\n"
-        return result
 
-
-dictionary = {}
+    return result
 
 # print(words_sorting(
 #     'escape',
