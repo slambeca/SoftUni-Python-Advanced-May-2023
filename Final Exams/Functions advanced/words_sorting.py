@@ -1,5 +1,5 @@
 def words_sorting(*args):
-    dictionary = {}
+    dictionary, result = {}, ""
 
     for word in args:
         if word not in dictionary.keys():
@@ -13,14 +13,12 @@ def words_sorting(*args):
         values_sum += int(value)
 
     if values_sum % 2 == 0:
-        result = ""
         dictionary = dict(sorted(dictionary.items(), key=lambda x: x[0]))
 
         for key, value in dictionary.items():
             result += f"{key} - {value}\n"
 
     else:
-        result = ""
         dictionary = dict(sorted(dictionary.items(), key=lambda x: -x[1]))
 
         for key, value in dictionary.items():
