@@ -17,7 +17,7 @@ for row in range(SIZE):
     save_positions("w", 0, row)
     save_positions("b", 1, row)
 
-if abs(positions[0][1] - positions[1][1]) != 1:    # One of the pawns encounters the other
+if abs(positions[0][1] - positions[1][1]) != 1 or positions[1][0] > positions[0][0]:    # One of the pawns encounters the other
     if SIZE - positions[0][0] - 1 <= positions[1][0]:
         print(f"Game over! Black pawn is promoted to a queen at {chr(97 + positions[1][1])}1.")
     else:
