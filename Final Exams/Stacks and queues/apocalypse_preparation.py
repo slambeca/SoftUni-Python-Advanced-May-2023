@@ -103,3 +103,53 @@ if textiles:
 #         if int(value) > 0:
 #             print(f"{key} - {value}")
 #     print(f"Textiles left: {', '.join(str(x) for x in textiles)}")
+
+# Variant 3
+# from collections import deque
+#
+# textiles = deque([int(x) for x in input().split()])
+# medicaments = deque([int(x) for x in input().split()])
+#
+# items_made = {
+#     "Patch": 0,
+#     "Bandage": 0,
+#     "MedKit": 0,
+# }
+#
+# while textiles and medicaments:
+#     current_textile = textiles.popleft()
+#     current_medicament = medicaments.pop()
+#
+#     result = current_textile + current_medicament
+#
+#     if result == 30:
+#         items_made["Patch"] += 1
+#     elif result == 40:
+#         items_made["Bandage"] += 1
+#     elif result == 100:
+#         items_made["MedKit"] += 1
+#     elif result > 100:
+#         items_made["MedKit"] += 1
+#         medicaments[-1] += result - 100
+#     else:
+#         medicaments.append(current_medicament + 10)
+#
+# if not textiles and not medicaments:
+#     print("Textiles and medicaments are both empty.")
+# elif not textiles:
+#     print("Textiles are empty.")
+# elif not medicaments:
+#     print("Medicaments are empty.")
+#
+# sorted_dict = dict(sorted(items_made.items(), key=lambda x: (-x[1], x[0])))
+#
+# for key, value in sorted_dict.items():
+#     if value:
+#         print(f"{key} - {value}")
+#
+#
+# if medicaments:
+#     medicaments.reverse()
+#     print(f"Medicaments left: {', '.join(str(x) for x in medicaments)}")
+# if textiles:
+#     print(f"Textiles left: {', '.join(str(x) for x in textiles)}")
