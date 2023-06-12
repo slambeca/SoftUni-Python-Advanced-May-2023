@@ -9,7 +9,7 @@ BOX_SIZE = 50
 BAD_LUCK = 13
 
 while eggs and papers:
-    first_egg = eggs.popleft()    # 20
+    first_egg = eggs.popleft()
 
     if first_egg <= 0:
         continue
@@ -27,8 +27,6 @@ while eggs and papers:
 
     if total_sum <= BOX_SIZE:
         boxes += 1
-    else:
-        continue
 
 if boxes:
     print(f"Great! You filled {boxes} boxes.")
