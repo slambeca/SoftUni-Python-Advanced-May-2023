@@ -41,5 +41,44 @@ if conquered_peaks:
     print(f"Conquered peaks:")
     for peak in conquered_peaks:
         print(peak)
-
-# 100/100 in Judge
+        
+# Variant 2
+# from collections import deque
+# 
+# conquered_peaks = []
+# day = 1
+# 
+# all_peaks = deque([
+#     ("Vihren", 80),
+#     ("Kutelo", 90),
+#     ("Banski Suhodol", 100),
+#     ("Polezhan", 60),
+#     ("Kamenitza", 70)
+# ])
+# 
+# daily_portions = deque([int(x) for x in input().split(", ")])
+# daily_stamina = deque([int(x) for x in input().split(", ")])
+# 
+# while True:
+#     if len(conquered_peaks) == 5:
+#         print("Alex did it! He climbed all top five Pirin peaks in one week -> @FIVEinAWEEK")
+#         break
+# 
+#     if day > 7 or not daily_portions or not daily_stamina:
+#         print("Alex failed! He has to organize his journey better next time -> @PIRINWINS")
+#         break
+# 
+#     current_daily_portion = daily_portions.pop()
+#     current_daily_stamina = daily_stamina.popleft()
+# 
+#     result = current_daily_portion + current_daily_stamina
+# 
+#     if result >= all_peaks[0][1]:
+#         conquered_peaks.append(all_peaks[0][0])
+#         all_peaks.popleft()
+#         day += 1
+# 
+# if conquered_peaks:
+#     print("Conquered peaks:")
+#     for peak in conquered_peaks:
+#         print(peak)
