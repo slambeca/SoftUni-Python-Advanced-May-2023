@@ -112,3 +112,67 @@ else:
 #     print("Area suitable to start the colony.")
 # else:
 #     print("Area not suitable to start the colony.")
+
+# Variant 3
+# SIZE = 6
+# 
+# directions = {
+#     "up": (-1, 0),
+#     "down": (1, 0),
+#     "left": (0, -1),
+#     "right": (0, 1),
+# }
+# 
+# collected_items = {"Water": 0, "Metal": 0, "Concrete": 0}
+# 
+# matrix = []
+# # - R - - - -
+# # - - - - - R
+# # - E - R - -
+# # - W - - - -
+# # - - - C - -
+# # M - - - - -
+# 
+# my_position = []
+# 
+# for row in range(SIZE):
+#     matrix.append(input().split())
+# 
+#     if "E" in matrix[row]:
+#         my_position = [row, matrix[row].index("E")]
+# 
+# commands = input().split(", ")
+# 
+# for direction in commands:
+#     wanted_row = my_position[0] + directions[direction][0]
+#     wanted_col = my_position[1] + directions[direction][1]
+# 
+#     if wanted_row < 0:
+#         wanted_row = SIZE - 1
+#     elif wanted_row >= SIZE:
+#         wanted_row = 0
+# 
+#     if wanted_col < 0:
+#         wanted_col = SIZE - 1
+#     elif wanted_col >= SIZE:
+#         wanted_col = 0
+# 
+#     if matrix[wanted_row][wanted_col] == "W":
+#         collected_items["Water"] += 1
+#         print(f"Water deposit found at ({wanted_row}, {wanted_col})")
+#     elif matrix[wanted_row][wanted_col] == "C":
+#         collected_items["Metal"] += 1
+#         print(f"Concrete deposit found at ({wanted_row}, {wanted_col})")
+#     elif matrix[wanted_row][wanted_col] == "M":
+#         collected_items["Concrete"] += 1
+#         print(f"Metal deposit found at ({wanted_row}, {wanted_col})")
+#     elif matrix[wanted_row][wanted_col] == "R":
+#         print(f"Rover got broken at ({wanted_row}, {wanted_col})")
+#         break
+# 
+#     my_position = [wanted_row, wanted_col]
+# 
+# if all(collected_items.values()):
+#     print("Area suitable to start the colony.")
+# else:
+#     print(f"Area not suitable to start the colony.")
