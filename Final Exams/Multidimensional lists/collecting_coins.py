@@ -142,3 +142,74 @@ print("Your path:")
 # print("Your path:")
 # for path in player_path:
 #     print(path)
+
+# Variant 3
+# GOAL = 100
+# 
+# directions = {
+#     "up": (-1, 0),
+#     "down": (1, 0),
+#     "left": (0, -1),
+#     "right": (0, 1),
+# }
+# 
+# n = int(input())
+# 
+# collected_coins = 0
+# 
+# matrix = []
+# # 1 X 7 9 11
+# # X 14 46 62 0
+# # 15 33 21 95 X
+# # P 14 3 4 18
+# # 9 20 33 X 0
+# 
+# my_position = []
+# my_path = []
+# 
+# for row in range(n):
+#     matrix.append(input().split())
+# 
+#     if "P" in matrix[row]:
+#         my_position = [row, matrix[row].index("P")]
+#         my_path.append([my_position[0], my_position[1]])
+# 
+# while True:
+#     direction = input()
+# 
+#     if direction in directions.keys():    # we ignore invalid commands
+# 
+#         wanted_row = my_position[0] + directions[direction][0]
+#         wanted_col = my_position[1] + directions[direction][1]
+# 
+#         if wanted_row < 0:
+#             wanted_row = n - 1
+#         elif wanted_row >= n:
+#             wanted_row = 0
+# 
+#         if wanted_col < 0:
+#             wanted_col = n - 1
+#         elif wanted_col >= n:
+#             wanted_col = 0
+# 
+#         if str(matrix[wanted_row][wanted_col]).isdigit():
+#             collected_coins += int(matrix[wanted_row][wanted_col])
+#             matrix[wanted_row][wanted_col] = 0
+#             my_position = [wanted_row, wanted_col]
+#             my_path.append(my_position)
+#             if collected_coins >= 100:
+#                 print(f"You won! You've collected {collected_coins} coins.")
+#                 break
+#         elif matrix[wanted_row][wanted_col] == "X":
+#             collected_coins = int(collected_coins / 2)
+#             my_position = [wanted_row, wanted_col]
+#             my_path.append(my_position)
+#             print(f"Game over! You've collected {collected_coins} coins.")
+#             break
+#         else:
+#             my_position = [wanted_row, wanted_col]
+#             my_path.append(my_position)
+# 
+# print("Your path:")
+# for path in my_path:
+#     print(path)
