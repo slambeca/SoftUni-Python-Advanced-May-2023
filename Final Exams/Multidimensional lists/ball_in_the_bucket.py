@@ -1,8 +1,6 @@
 SIZE = 6
 
 matrix = [[x for x in input().split()] for _ in range(SIZE)]
-# [['10', '30', 'B', '4', '20', '24'], ['7', '8', '27', '23', '11', '19'], ['13', '3', '14', 'B', '17', 'В'],
-# ['12', '5', '21', '22', '9', '6'], ['B', '26', '1', '28', '29', '2'], ['25', 'B', '16', '15', 'B', '18']]
 
 total_sum = 0
 prize = None
@@ -88,3 +86,55 @@ else:
 #     print(f"Good job! You scored {points_scored} points, and you've won {prize_won}.")
 # else:
 #     print(f"Sorry! You need {100 - points_scored} points more to win a prize.")
+
+# Variant 3
+def check_indices(r, c, size):
+    if 0 <= r < size and 0 <= c < size:
+        return True
+
+    return False
+
+
+SIZE = 6
+THROWS = 3
+prize_won = ""
+
+matrix = []
+# 10 30 B 4 20 24
+# 7 8 27 23 11 19
+# 13 3 14 B 17 В
+# 12 5 21 22 9 6
+# B 26 1 28 29 2
+# 25 B 16 15 B 18
+
+total_points = 0
+
+for row in range(SIZE):
+    matrix.append(input().split())
+
+for _ in range(THROWS):
+    coordinates = input().split(", ")
+    wanted_row = int(coordinates[0].strip("("))
+    wanted_col = int(coordinates[1].strip(")"))
+
+    if not check_indices(wanted_row, wanted_col, SIZE) or matrix[wanted_row][wanted_col] != "B":
+        continue
+
+    if matrix[wanted_row][wanted_col] == "B":
+        matrix[wanted_row][wanted_col] = 0
+        for row in range(SIZE):
+            for col in range(SIZE):
+                if col == wanted_col:
+                    total_points += int(matrix[row][col])
+
+if 100 <= total_points <= 199:
+    prize_won = "Football"
+elif 200 <= total_points <= 299:
+    prize_won = "Teddy Bear"
+elif total_points >= 300:
+    prize_won = "Lego Construction Set"
+
+if not prize_won:
+    print(f"Sorry! You need {100 - total_points} points more to win a prize.")
+else:
+    print(f"Good job! You scored {total_points} points, and you've won {prize_won}.")
