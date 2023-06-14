@@ -69,3 +69,81 @@ while True:
 print(f"Food eaten: {food_eaten}")
 for row in matrix:
     print(''.join(row))
+   
+# Variant 2 
+# def check_for_indices(r, c, some_array):
+#     if 0 <= r < some_array and 0 <= c < some_array:
+#         return True
+# 
+#     return False
+# 
+# 
+# n = int(input())
+# 
+# directions = {
+#     "up": (-1, 0),
+#     "down": (1, 0),
+#     "left": (0, -1),
+#     "right": (0, 1),
+# }
+# 
+# food_eaten = 0
+# GOAL = 10
+# 
+# matrix = []
+# # -----S
+# # ----B-
+# # ------
+# # ------
+# # --B---
+# # --*---
+# 
+# my_position = []
+# burrows_positions = []    # [[0, 4], [4, 2]]
+# stepped_on_burrow = False
+# 
+# for row in range(n):
+#     matrix.append([x for x in input()])
+# 
+#     if "S" in matrix[row]:
+#         my_position = [row, matrix[row].index("S")]
+#         matrix[row][my_position[1]] = "."
+#     if "B" in matrix[row]:
+#         burrows_positions.append([row, matrix[row].index("B")])
+# 
+# while True:
+#     direction = input()
+# 
+#     wanted_row = my_position[0] + directions[direction][0]
+#     wanted_col = my_position[1] + directions[direction][1]
+# 
+#     if not check_for_indices(wanted_row, wanted_col, n):
+#         print("Game over!")
+#         break
+# 
+#     if matrix[wanted_row][wanted_col] == "*":
+#         matrix[wanted_row][wanted_col] = "."
+#         food_eaten += 1
+#         if food_eaten == GOAL:
+#             matrix[wanted_row][wanted_col] = "S"
+#             print("You won! You fed the snake.")
+#             break
+#     elif matrix[wanted_row][wanted_col] == "-":
+#         matrix[wanted_row][wanted_col] = "."
+#     elif matrix[wanted_row][wanted_col] == "B":
+#         stepped_on_burrow = True
+#         if [wanted_row, wanted_col] == burrows_positions[0]:
+#             wanted_row, wanted_col = burrows_positions[1][0], burrows_positions[1][1]
+#         elif [wanted_row, wanted_col] == burrows_positions[1]:
+#             wanted_row, wanted_col = burrows_positions[0][0], burrows_positions[0][1]
+# 
+#     if stepped_on_burrow:
+#         stepped_on_burrow = False
+#         for position in burrows_positions:
+#             matrix[position[0]][position[1]] = "."
+# 
+#     my_position = [wanted_row, wanted_col]
+# 
+# print(f"Food eaten: {food_eaten}")
+# for row in matrix:
+#     print(''.join(row))
