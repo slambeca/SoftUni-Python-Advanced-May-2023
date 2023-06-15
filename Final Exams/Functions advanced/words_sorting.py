@@ -56,3 +56,27 @@ def words_sorting(*args):
 #         return '\n'.join([f"{w} - {s}" for w, s in sorted(words_dict.items(), key=lambda x: x[0])])
 #
 #     return '\n'.join([f"{w} - {s}" for w, s in sorted(words_dict.items(), key=lambda x: -x[1])])
+
+# Variant 3
+# def words_sorting(*args):
+#     dictionary = {}
+# 
+#     for word in args:
+#         dictionary[word] = sum(ord(x) for x in word)
+# 
+#     total_sum = 0
+# 
+#     for key, values in dictionary.items():
+#         total_sum += values
+# 
+#     if total_sum % 2 == 0:
+#         sorted_dict = sorted(dictionary.items(), key=lambda x: x[0])
+#     else:
+#         sorted_dict = sorted(dictionary.items(), key=lambda x: -x[1])
+# 
+#     result = ""
+# 
+#     for key, value in sorted_dict:
+#         result += f"{key} - {value}\n"
+# 
+#     return result.strip()
