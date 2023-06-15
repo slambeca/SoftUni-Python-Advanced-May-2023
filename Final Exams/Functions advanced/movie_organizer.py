@@ -22,8 +22,8 @@ def movie_organizer(*args):
     return '\n'.join(result)
 
 
-print(movie_organizer(
-    ("The Matrix", "Sci-fi")))
+# print(movie_organizer(
+#     ("The Matrix", "Sci-fi")))
 
 # print(movie_organizer(
 #     ("The Godfather", "Drama"),
@@ -44,3 +44,24 @@ print(movie_organizer(
 #     ("Like A Boss", "Comedy"),
 #     ("The Green Mile", "Drama"),
 #     ("21 Jump Street", "Comedy")))
+
+# Variant 2
+# def movie_organizer(*args):
+#     dictionary, result = {}, ""
+# 
+#     for movie, genre in args:
+#         if genre not in dictionary.keys():
+#             dictionary[genre] = []
+#         dictionary[genre].append(movie)
+# 
+#     for key, values in dictionary.items():
+#         values.sort()
+# 
+#     sorted_dict = dict(sorted(dictionary.items(), key=lambda x: (-len(x[1]), x[0])))
+# 
+#     for key, values in sorted_dict.items():
+#         result += f"{key} - {len(values)}\n"
+#         for value in values:
+#             result += f"* {value}\n"
+# 
+#     return result.strip()
