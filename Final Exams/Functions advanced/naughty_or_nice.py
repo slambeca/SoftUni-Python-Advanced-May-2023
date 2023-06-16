@@ -72,3 +72,81 @@ print(naughty_or_nice_list(
     Merry="Nice",
     John="Naughty",
 ))
+
+# Variant 2
+# def naughty_or_nice_list(santas_list, *args, **kwargs):
+#     naughty_kids = []
+#     nice_kids = []
+#     result = []
+#
+#     for kid_data in args:
+#         number, type_of_kid = kid_data.split("-")
+#
+#         kids = [current_kid for current_kid in santas_list if current_kid[0] == int(number)]
+#
+#         if len(kids) == 1:
+#             nice_kids.extend(kids) if type_of_kid == "Nice" else naughty_kids.extend(kids)
+#             santas_list.remove(*kids)
+#
+#     for name, type_of_kid in kwargs.items():
+#         kids = [current_kid for current_kid in santas_list if current_kid[1] == name]
+#         if len(kids) == 1:
+#             nice_kids.extend(kids) if type_of_kid == "Nice" else naughty_kids.extend(kids)
+#             santas_list.remove(*kids)
+#
+#     if nice_kids:
+#         result.append(f"Nice: {', '.join(kid[1] for kid in nice_kids)}")
+#     if naughty_kids:
+#         result.append(f"Naughty: {', '.join(kid[1] for kid in naughty_kids)}")
+#     if santas_list:
+#         result.append(f"Not found: {', '.join(kid[1] for kid in santas_list)}")
+#
+#     return '\n'.join(result)
+#
+#
+# print(naughty_or_nice_list(
+#     [
+#         (3, "Amy"),
+#         (1, "Tom"),
+#         (7, "George"),
+#         (3, "Katy"),
+#     ],
+#     "3-Nice",
+#     "1-Naughty",
+#     Amy="Nice",
+#     Katy="Naughty",
+# ))
+#
+# print(naughty_or_nice_list(
+#     [
+#         (7, "Peter"),
+#         (1, "Lilly"),
+#         (2, "Peter"),
+#         (12, "Peter"),
+#         (3, "Simon"),
+#     ],
+#     "3-Nice",
+#     "5-Naughty",
+#     "2-Nice",
+#     "1-Nice",
+#     ))
+#
+# print(naughty_or_nice_list(
+#     [
+#         (6, "John"),
+#         (4, "Karen"),
+#         (2, "Tim"),
+#         (1, "Merry"),
+#         (6, "Frank"),
+#     ],
+#     "6-Nice",
+#     "5-Naughty",
+#     "4-Nice",
+#     "3-Naughty",
+#     "2-Nice",
+#     "1-Naughty",
+#     Frank="Nice",
+#     Merry="Nice",
+#     John="Naughty",
+# ))
+
