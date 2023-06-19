@@ -17,3 +17,4 @@ The course "Python Advanced" builds on Python language skills by addressing more
 * Error handling
 
 # Certificate and Course Cirriculum
+![Python Advanced - May 2023 - Certificate](https://github.com/slambeca/SoftUni-Python-Advanced-May-2023/assets/95913250/3868a2fb-a2ff-4e5e-9446-d80ef58c015c)
